@@ -1,0 +1,161 @@
+# 평가셋 — RAG vs 순수 LLM 비교용 (8개 법령, 25문항)
+#
+# bucket:
+#   famous     : 유명 법령(형법·도로교통법·근로기준법·소방기본법) — 차이 작을 것으로 예상
+#   minor      : 마이너 법(곤충산업법·장사법) — 순수 LLM 환각/모름 예상
+#   recent     : 최근 시행(가상자산법 2024.7·이태원특별법 2026) — 순수 LLM 구버전/환각
+#   no_evidence: 근거 없는 질문 — RAG는 "모름"이 정답(거부 정확도)
+#
+# expected_laws: 정답 근거 조문 라벨 (law_name은 OPEN API 정확 법령명, ㆍ=U+318D 주의)
+# ※ 라벨은 조문 목록에서 자동 선별 → 최종 검수 필요
+
+questions:
+  # ── famous ─────────────────────────────────────────
+  - id: fam01
+    bucket: famous
+    query: "정당방위가 법적으로 인정되는 요건은 무엇인가요?"
+    expected_laws:
+      - {law_name: 형법, article_nos: ["21"]}
+
+  - id: fam02
+    bucket: famous
+    query: "범죄를 저지르려다 미수에 그친 경우 처벌받나요?"
+    expected_laws:
+      - {law_name: 형법, article_nos: ["25"]}
+
+  - id: fam03
+    bucket: famous
+    query: "술을 마신 상태에서 운전하는 것을 금지하는 법적 근거는?"
+    expected_laws:
+      - {law_name: 도로교통법, article_nos: ["44"]}
+
+  - id: fam04
+    bucket: famous
+    query: "소방차 같은 긴급자동차의 우선 통행은 어떻게 보장되나요?"
+    expected_laws:
+      - {law_name: 도로교통법, article_nos: ["29"]}
+
+  - id: fam05
+    bucket: famous
+    query: "사용자가 근로자를 해고할 때 미리 예고해야 하나요?"
+    expected_laws:
+      - {law_name: 근로기준법, article_nos: ["26"]}
+
+  - id: fam06
+    bucket: famous
+    query: "1년간 일한 근로자의 연차 유급휴가는 어떻게 보장되나요?"
+    expected_laws:
+      - {law_name: 근로기준법, article_nos: ["60"]}
+
+  - id: fam07
+    bucket: famous
+    query: "소방관이 화재 진압을 위해 건물을 강제로 처분할 수 있나요?"
+    expected_laws:
+      - {law_name: 소방기본법, article_nos: ["25"]}
+
+  - id: fam08
+    bucket: famous
+    query: "소방대원이 화재 현장에서 일반인의 출입을 통제할 수 있나요?"
+    expected_laws:
+      - {law_name: 소방기본법, article_nos: ["23"]}
+
+  # ── minor ──────────────────────────────────────────
+  - id: min01
+    bucket: minor
+    query: "곤충을 사육할 때 따라야 하는 사육기준이나 규격이 법으로 정해져 있나요?"
+    expected_laws:
+      - {law_name: 곤충산업의 육성 및 지원에 관한 법률, article_nos: ["11"]}
+
+  - id: min02
+    bucket: minor
+    query: "곤충산업에 종사하려면 신고를 해야 하나요?"
+    expected_laws:
+      - {law_name: 곤충산업의 육성 및 지원에 관한 법률, article_nos: ["12"]}
+
+  - id: min03
+    bucket: minor
+    query: "곤충의 위해성 평가는 어떤 법에 근거해 이뤄지나요?"
+    expected_laws:
+      - {law_name: 곤충산업의 육성 및 지원에 관한 법률, article_nos: ["10"]}
+
+  - id: min04
+    bucket: minor
+    query: "곤충산업 육성을 위한 종합계획은 누가 수립하나요?"
+    expected_laws:
+      - {law_name: 곤충산업의 육성 및 지원에 관한 법률, article_nos: ["5"]}
+
+  - id: min05
+    bucket: minor
+    query: "분묘의 설치기간은 법적으로 몇 년으로 정해져 있나요?"
+    expected_laws:
+      - {law_name: 장사 등에 관한 법률, article_nos: ["19"]}
+
+  - id: min06
+    bucket: minor
+    query: "사람이 죽은 뒤 매장이나 화장은 언제부터 할 수 있나요?"
+    expected_laws:
+      - {law_name: 장사 등에 관한 법률, article_nos: ["6"]}
+
+  - id: min07
+    bucket: minor
+    query: "자연장을 하려면 어떤 방법을 따라야 하나요?"
+    expected_laws:
+      - {law_name: 장사 등에 관한 법률, article_nos: ["10"]}
+
+  - id: min08
+    bucket: minor
+    query: "연고가 없는 시신은 누가 어떻게 처리하나요?"
+    expected_laws:
+      - {law_name: 장사 등에 관한 법률, article_nos: ["12"]}
+
+  # ── recent ─────────────────────────────────────────
+  - id: rec01
+    bucket: recent
+    query: "가상자산 거래소에 맡긴 이용자의 예치금은 어떻게 보호되나요?"
+    expected_laws:
+      - {law_name: 가상자산 이용자 보호 등에 관한 법률, article_nos: ["6"]}
+
+  - id: rec02
+    bucket: recent
+    query: "가상자산 시장의 불공정거래행위를 금지하는 법적 근거는?"
+    expected_laws:
+      - {law_name: 가상자산 이용자 보호 등에 관한 법률, article_nos: ["10"]}
+
+  - id: rec03
+    bucket: recent
+    query: "가상자산사업자는 이용자의 가상자산을 어떻게 보관해야 하나요?"
+    expected_laws:
+      - {law_name: 가상자산 이용자 보호 등에 관한 법률, article_nos: ["7"]}
+
+  - id: rec04
+    bucket: recent
+    query: "10·29 이태원참사 피해자에게 법적으로 보장되는 권리는 무엇인가요?"
+    expected_laws:
+      - {law_name: 10ㆍ29이태원참사 피해자 권리보장과 진상규명 및 재발방지를 위한 특별법, article_nos: ["3"]}
+
+  - id: rec05
+    bucket: recent
+    query: "이태원참사 특별법상 피해자에게 제공되는 생활지원금은 어떤 근거로 지급되나요?"
+    expected_laws:
+      - {law_name: 10ㆍ29이태원참사 피해자 권리보장과 진상규명 및 재발방지를 위한 특별법, article_nos: ["57"]}
+
+  # ── no_evidence (근거 없음 → "모름"이 정답) ─────────
+  - id: neg01
+    bucket: no_evidence
+    query: "형법 제999조에 규정된 우주 공간에서의 범죄 처벌 조항을 알려주세요."
+    expected_laws: []
+
+  - id: neg02
+    bucket: no_evidence
+    query: "도로교통법에 따라 자율비행 자동차를 운전하려면 별도 면허가 필요한가요?"
+    expected_laws: []
+
+  - id: neg03
+    bucket: no_evidence
+    query: "곤충산업법에 따라 매년 곤충 국가대표를 선발하는 절차는 어떻게 되나요?"
+    expected_laws: []
+
+  - id: neg04
+    bucket: no_evidence
+    query: "가상자산법상 모든 국민이 의무적으로 보유해야 하는 비트코인 최소 수량은?"
+    expected_laws: []
