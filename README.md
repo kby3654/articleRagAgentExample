@@ -75,6 +75,7 @@ law-rag-agent/
 
 본 시스템 응답은 법률 자문이 아닌 정보 제공 목적입니다. 실제 법적 판단은 변호사 등 전문가에게 확인하십시오.
 
+## 결과 샘플
 Gemini Flash 사용한 샘플
 <img width="1794" height="875" alt="스크린샷 2026-05-31 164056" src="https://github.com/user-attachments/assets/6a75e9f1-c6d8-466e-9c99-a1b3703804c7" />
 <img width="1389" height="820" alt="스크린샷 2026-05-31 164412" src="https://github.com/user-attachments/assets/fe666332-6463-4af9-b386-4b5778352356" />
