@@ -19,7 +19,7 @@
 
 ```bash
 cp .env.example .env
-# .env 편집: DEEPSEEK_API_KEY, LAW_API_KEY 입력
+# .env 편집: API_KEY, LAW_API_KEY 입력
 ```
 
 ### 2. 의존성 설치

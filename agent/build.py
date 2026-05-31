@@ -14,8 +14,8 @@ from agent.tools import ALL_TOOLS
 def _make_llm():
     return ChatOpenAI(
         model=os.getenv("LLM_MODEL", "deepseek-chat"),
-        base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
-        api_key=os.getenv("DEEPSEEK_API_KEY", ""),
+        base_url=os.getenv("API_BASE_URL", "https://api.deepseek.com"),
+        api_key=os.getenv("API_KEY", ""),
         temperature=0,
         max_retries=5,
     )
