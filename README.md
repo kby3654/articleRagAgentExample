@@ -74,3 +74,20 @@ law-rag-agent/
 ## 면책
 
 본 시스템 응답은 법률 자문이 아닌 정보 제공 목적입니다. 실제 법적 판단은 변호사 등 전문가에게 확인하십시오.
+
+Gemini Flash 사용한 샘플
+<img width="1794" height="875" alt="스크린샷 2026-05-31 164056" src="https://github.com/user-attachments/assets/6a75e9f1-c6d8-466e-9c99-a1b3703804c7" />
+<img width="1389" height="820" alt="스크린샷 2026-05-31 164412" src="https://github.com/user-attachments/assets/fe666332-6463-4af9-b386-4b5778352356" />
+
+
+DeepSeek 모델 사용한 샘플
+
+<img width="1590" height="823" alt="스크린샷 2026-05-31 215627" src="https://github.com/user-attachments/assets/900125d2-2d48-46cf-be1d-e8cba132ffe4" />
+
+
+<img width="1556" height="792" alt="스크린샷 2026-05-31 203330" src="https://github.com/user-attachments/assets/a3384427-337c-4800-995e-0f55a7ca23c0" />
+<img width="1572" height="861" alt="스크린샷 2026-05-31 203348" src="https://github.com/user-attachments/assets/5f7d9864-264b-4fb5-a92f-dd8242da6680" />
+<img width="1562" height="800" alt="스크린샷 2026-05-31 203554" src="https://github.com/user-attachments/assets/1d822fa2-ab80-4266-a8ce-155baaadb365" />
+<img width="1611" height="849" alt="스크린샷 2026-05-31 203417" src="https://github.com/user-attachments/assets/7a3912f8-6a5b-49cb-818c-325816c66670" />
+<img width="1560" height="853" alt="스크린샷 2026-05-31 203641" src="https://github.com/user-attachments/assets/e4228136-53c2-4c47-9d10-804c39be0774" />
+
